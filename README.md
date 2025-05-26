@@ -18,5 +18,12 @@ This is a demo project to demonstrate [LangChain](https://js.langchain.com/docs/
 - [x] [**Tool**] List tasks in a project
 - [ ] [**Tool**] Mark a task as done
 - [ ] [**Tool**] Create a task
+- [ ] [**Graph**] Expand graph to a more interesting workflow
 - [ ] [**Memmory**] Sync context with a database
 - [ ] [**App**] Manage multiple conversations
+
+## Agent Workflow
+
+This is the workflow as it stands currently
+
+![Agent Workflow Diagram](./agent-workflow.png "Agent Workflow")
