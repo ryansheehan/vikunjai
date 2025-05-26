@@ -18,7 +18,7 @@ This is a demo project to demonstrate [LangChain](https://js.langchain.com/docs/
 - [ ] [**State**] Remove unnecessary messages from context
 - [x] [**Tool**] List tasks in a project
 - [ ] [**Tool**] Mark a task as done
-- [ ] [**Tool**] Create a task
+- [x] [**Tool**] Create a task
 - [ ] [**Graph**] Expand graph to a more interesting workflow
 - [ ] [**Graph**] Add human approval step
 - [ ] [**Memmory**] Sync context with a database

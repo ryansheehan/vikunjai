@@ -3,6 +3,7 @@ import type { RequestHandler } from './$types';
 import {validatePostChatSchema, type PostChatResponse} from './types';
 import {invokeHumanMessage} from '$lib/server/llm/actions/invoke';
 import {serializeMessages} from '$lib/server/llm/serializers/browser';
+import {debug} from '$lib/server/llm/serializers/debug';
 
 export const POST: RequestHandler = async ({locals, request}) => {
     const { llm } = locals;
@@ -22,6 +23,8 @@ export const POST: RequestHandler = async ({locals, request}) => {
     }
 
     const chatState = await invokeHumanMessage({chatId, message, llm, metadata});
+
+    debug(chatState.messages, "tool").forEach(msg => console.log(msg));
 
     const excludeSet = new Set(exclude);
     const messages = serializeMessages(chatState.messages, excludeSet);
