@@ -24,6 +24,7 @@ This is a demo project to demonstrate [LangChain](https://js.langchain.com/docs/
 - [ ] [**Memmory**] Sync context with a database
 - [ ] [**App**] Manage multiple conversations
 - [ ] [**App**] Authentication
+- [ ] [**App**] Streaming responses
 
 ## Agent Workflow
 
