@@ -1,10 +1,4 @@
-import {model as gemini} from './gemini';
+import {createGeminiModel} from './gemini';
 
-const defaultModel = gemini;
+export const createModel = createGeminiModel;
 
-export {
-    defaultModel,
-    gemini,
-};
-
-export default defaultModel;

@@ -65,6 +65,7 @@
 		"@langchain/langgraph": "^0.2.73",
 		"better-sqlite3": "^11.8.0",
 		"drizzle-orm": "^0.43.1",
+		"node-vikunja": "^0.3.0",
 		"rehype-sanitize": "^6.0.0",
 		"rehype-stringify": "^10.0.1",
 		"remark-gfm": "^4.0.1",

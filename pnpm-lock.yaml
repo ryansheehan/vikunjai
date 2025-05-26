@@ -27,6 +27,9 @@ importers:
       drizzle-orm:
         specifier: ^0.43.1
         version: 0.43.1(@types/better-sqlite3@7.6.13)(better-sqlite3@11.10.0)(gel@2.1.0)
+      node-vikunja:
+        specifier: ^0.3.0
+        version: 0.3.0
       rehype-sanitize:
         specifier: ^6.0.0
         version: 6.0.0
@@ -2017,6 +2020,9 @@ packages:
   node-abi@3.75.0:
     resolution: {integrity: sha512-OhYaY5sDsIka7H7AtijtI9jwGYLyl29eQn/W623DiN/MIv5sUqc4g7BIDThX+gb7di9f6xK02nkp8sdfFWZLTg==}
     engines: {node: '>=10'}
+
+  node-vikunja@0.3.0:
+    resolution: {integrity: sha512-RgglRanA5jPgYdSH9j2hJXXFIcAdt0cPopRCimtnpBNfhaarwPVIkhSFOf3TTkFubSRnpt6kFZIqIihIDNB/Cw==}
 
   normalize-url@8.0.1:
     resolution: {integrity: sha512-IO9QvjUMWxPQQhs60oOu10CRkWCiZzSUkzbXGGV9pviYl1fXYcvkzQ5jV9z8Y6un8ARoVRl4EtC6v6jNqbaJ/w==}
@@ -4609,6 +4615,8 @@ snapshots:
   node-abi@3.75.0:
     dependencies:
       semver: 7.7.2
+
+  node-vikunja@0.3.0: {}
 
   normalize-url@8.0.1:
     optional: true
