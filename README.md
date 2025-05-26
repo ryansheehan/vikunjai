@@ -25,6 +25,7 @@ This is a demo project to demonstrate [LangChain](https://js.langchain.com/docs/
 - [ ] [**App**] Manage multiple conversations
 - [ ] [**App**] Authentication
 - [ ] [**App**] Streaming responses
+- [ ] [**App**] Explore [AG-UI](https://docs.ag-ui.com/introduction) integration
 
 ## Agent Workflow
 
