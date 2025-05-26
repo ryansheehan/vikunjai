@@ -15,12 +15,15 @@ This is a demo project to demonstrate [LangChain](https://js.langchain.com/docs/
 - [x] Model a LangGraph
 - [x] Introduce a tool
 - [ ] [**State**] Expand state beyond `messages`
+- [ ] [**State**] Remove unnecessary messages from context
 - [x] [**Tool**] List tasks in a project
 - [ ] [**Tool**] Mark a task as done
 - [ ] [**Tool**] Create a task
 - [ ] [**Graph**] Expand graph to a more interesting workflow
+- [ ] [**Graph**] Add human approval step
 - [ ] [**Memmory**] Sync context with a database
 - [ ] [**App**] Manage multiple conversations
+- [ ] [**App**] Authentication
 
 ## Agent Workflow
 
