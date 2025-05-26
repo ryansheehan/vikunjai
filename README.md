@@ -1,38 +1,22 @@
-# sv
+# VikunjAI
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is a demo project to demonstrate [LangChain](https://js.langchain.com/docs/introduction/) and [LangGraph](https://langchain-ai.github.io/langgraphjs/concepts/). The goal of this project is to create an ai agent workflow that can conversationally interact with a [Vikunja](https://vikunja.io/) instance to manage tasks
 
-## Creating a project
+## Requirements
 
-If you're seeing this, you've probably already done this step. Congrats!
+* Vikunja instance with API access
+* Google Gemini API key
+* Node.js v24
+* pnpm
 
-```bash
-# create a new project in the current directory
-npx sv create
+## Project Objectives
 
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- [x] Conversation AI web interface
+- [x] Model a LangGraph
+- [x] Introduce a tool
+- [ ] [**State**] Expand state beyond `messages`
+- [x] [**Tool**] List tasks in a project
+- [ ] [**Tool**] Mark a task as done
+- [ ] [**Tool**] Create a task
+- [ ] [**Memmory**] Sync context with a database
+- [ ] [**App**] Manage multiple conversations
