@@ -6,6 +6,6 @@
 </script>
 
 <ModeWatcher defaultMode="dark" />
-<main class="p-4 md:p-8 lg:p-12 xl:p-16 2xl:p-20 min-h-screen flex flex-col justify-end">
+<main class="p-4 md:p-8 lg:p-12 xl:p-16 2xl:p-20 min-h-screen flex flex-col">
 	{@render children()}
 </main>

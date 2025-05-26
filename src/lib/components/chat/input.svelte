@@ -3,19 +3,16 @@
     import * as Card from '$lib/components/ui/card';
     import {Button} from '$lib/components/ui/button';
     import { Textarea } from '$lib/components/ui/textarea';
-    import type {HTMLTextareaAttributes, FormEventHandler, KeyboardEventHandler} from 'svelte/elements';
-    import {cn} from '$lib/utils';
+    import type {FormEventHandler, KeyboardEventHandler} from 'svelte/elements';
 
-    interface Props extends Omit<HTMLTextareaAttributes, 'onsubmit'> {
-        onsubmit?: (value: string) => void;        
+    interface Props {
+        onsubmit?: (value: string) => void;
+        value?: string;
     }
 
     let {
         onsubmit, 
-        oninput,
-        onkeydown, 
         value = $bindable(''), 
-        class: className, 
         ...restProps
     }: Props = $props();
 
@@ -23,12 +20,11 @@
 
     let internalValue = $state('');
 
-    const oninputInternal: FormEventHandler<HTMLTextAreaElement> = (event) => {
+    const oninput: FormEventHandler<HTMLTextAreaElement> = (event) => {
         value = internalValue;        
-        oninput?.(event);
     }
 
-    const onkeydownInternal: KeyboardEventHandler<HTMLTextAreaElement> = (event) => {
+    const onkeydown: KeyboardEventHandler<HTMLTextAreaElement> = (event) => {
         if (event.key === 'Enter') {
             event.preventDefault();
             if (event.shiftKey) {
@@ -37,7 +33,6 @@
                 submit();                
             }
         }
-        onkeydown?.(event);
     }  
     
     const submit = () => {
@@ -51,9 +46,9 @@
         <Textarea 
             bind:ref 
             bind:value={internalValue}  
-            oninput={oninputInternal}
-            onkeydown={onkeydownInternal}
-            class={['border-0 max-h-[calc(9*1.6*16px)]', className]} 
+            {oninput}
+            {onkeydown}
+            class="border-0 max-h-[calc(9*1.6*16px)]" 
             placeholder="Ask VikunjAI"
             {...restProps}/>
             <Button variant="outline" size="icon" onclick={submit}>

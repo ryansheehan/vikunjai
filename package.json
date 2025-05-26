@@ -56,20 +56,24 @@
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.20.0",
 		"vaul-svelte": "1.0.0-next.7",
-		"vite": "^6.2.6"
+		"vite": "^6.2.6",
+		"vite-plugin-devtools-json": "^0.1.0"
 	},
 	"dependencies": {
 		"@langchain/core": "^0.3.57",
 		"@langchain/google-genai": "^0.2.9",
+		"@langchain/langgraph": "^0.2.73",
 		"better-sqlite3": "^11.8.0",
 		"drizzle-orm": "^0.43.1",
 		"rehype-sanitize": "^6.0.0",
 		"rehype-stringify": "^10.0.1",
+		"remark-gfm": "^4.0.1",
 		"remark-parse": "^11.0.0",
 		"remark-rehype": "^11.1.2",
 		"runed": "^0.28.0",
 		"svelte-inspect-value": "^0.7.2",
 		"unified": "^11.0.5",
+		"uuid": "^11.1.0",
 		"zod": "^3.25.28"
 	},
 	"pnpm": {
@@ -77,6 +81,10 @@
 			"@tailwindcss/oxide",
 			"better-sqlite3",
 			"esbuild"
-		]
+		],
+		"overrides": {
+			"esbuild@<=0.24.2": ">=0.25.0",
+			"cookie@<0.7.0": ">=0.7.0"
+		}
 	}
 }

@@ -1,29 +1,36 @@
-<script lang="ts">    
-    import * as Card from '$lib/components/ui/card';    
-    import PromptForm from '$lib/forms/prompt/prompt-form.svelte';
+<script lang="ts">        
+    import ChatInput from '$lib/components/chat/input.svelte';    
+    import Conversation from '$lib/components/chat/conversation.svelte';
+    import type {PostChatResponse, PostChatRequest, Message} from '$api/chat/types';
 
-    import ChatInput from '$lib/components/chat/input.svelte';
+    let chatId = $state<string | undefined>(undefined);
+    let messages = $state<Message[]>([]);
+    let exclude = $derived(messages.map(({id}) => id));
 
-    import {Conversation} from '$lib/conversation/conversation.svelte.js';
+    const onsubmit = async (content: string) => {
+        const postChat: PostChatRequest = {
+            chatId,
+            exclude,
+            message: content
+        };
 
-    let {data} = $props();
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            body: JSON.stringify(postChat),
+        });
 
-    let response = $state<unknown>(null);
-    function onResult(data: unknown) {
-        console.log('results:');
-        console.log(data);
-        response = data;
-    }    
+        if (!response.ok) {
+            console.error('Request failed', response.status, response.statusText);
+            return;
+        }
+
+        const data: PostChatResponse = await response.json();
+        messages = [...messages, ...data.messages];
+        chatId = data.chatId;
+    }
 </script>
 
-<!-- <Card.Root class="max-w-lg mx-auto mt-4">
-    <Card.Header>
-        <Card.Title>VikunjAI</Card.Title>
-        <Card.Description>Send prompt</Card.Description>
-    </Card.Header>
-    <Card.Content>
-        <PromptForm form={data.form} {onResult} />
-    </Card.Content>
-</Card.Root> -->
-
-<ChatInput />
+<div class="flex-1 grid grid-cols-1 grid-rows-[1fr_min-content] gap-6">
+    <Conversation {messages} />
+    <ChatInput {onsubmit} />
+</div>
