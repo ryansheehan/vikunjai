@@ -14,7 +14,14 @@ export const POST: RequestHandler = async ({locals, request}) => {
 
     const {message, chatId, exclude} = data;
 
-    const chatState = await invokeHumanMessage({chatId, message, llm});
+    const metadata = {
+        vikunja: {
+            projectId: 2,
+            viewId: 5,
+        }
+    }
+
+    const chatState = await invokeHumanMessage({chatId, message, llm, metadata});
 
     const excludeSet = new Set(exclude);
     const messages = serializeMessages(chatState.messages, excludeSet);

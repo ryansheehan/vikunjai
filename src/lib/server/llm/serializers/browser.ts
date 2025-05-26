@@ -28,7 +28,10 @@ export function serializeMessages(messages: Messages, skipIds: Set<string>) {
                 && message.tool_calls.length > 0
             ) {
                     return false;
-            }            
+            }
+            
+            // filter out system messages
+            if (role === 'system') return false;
 
             return true;
         })

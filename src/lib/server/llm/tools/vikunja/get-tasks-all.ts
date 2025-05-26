@@ -14,8 +14,17 @@ const getAllTasksToolInputSchema = z.object({
 
 type GetAllTasksToolInput = z.infer<typeof getAllTasksToolInputSchema>;
 
-export const vikunjaGetAllTasks = tool(async ({state}: GetAllTasksToolInput) => {
-    const url = new URL(`${env.VIKUNJA_URL}/api/v1/projects/2/views/5/tasks`);
+export const vikunjaGetAllTasks = tool(async ({state}: GetAllTasksToolInput, {metadata}) => {
+    const vikunjaData = metadata?.vikunja;
+
+    if (!vikunjaData || (!vikunjaData.projectId || !vikunjaData.viewId)) {
+        throw new Error('projectId and viewId required');
+    }
+
+    const projectId = vikunjaData.projectId;
+    const viewId = vikunjaData.viewId;
+
+    const url = new URL(`${env.VIKUNJA_URL}/api/v1/projects/${projectId}/views/${viewId}/tasks`);
 
     switch (state) {
         case 'completed':
@@ -47,9 +56,5 @@ export const vikunjaGetAllTasks = tool(async ({state}: GetAllTasksToolInput) => 
 }, {
     name: 'vikunja_get_all_tasks',
     description: 'Get all tasks from Vikunja taks management system. The list can be optionally filtered by their completition state. Use the title property of a task unless additional properties are requested.',
-    schema: z.object({
-        state: z.enum(['all', 'completed', 'incomplete'])
-            .default('all')
-            .describe('filter tasks by if they are completed or not. Defaults to "all" if not specified and "all" returns all tasks regardless if they are done or not. "completed" returns only tasks that are done. "incomplete" returns only tasks that are not marked as done.'),
-    })
+    schema: getAllTasksToolInputSchema,
 })
