@@ -16,8 +16,9 @@ This is a demo project to demonstrate [LangChain](https://js.langchain.com/docs/
 - [x] Introduce a tool
 - [ ] [**State**] Expand state beyond `messages`
 - [ ] [**State**] Remove unnecessary messages from context
+- [ ] [**State**] 3-way sync state between client/llm/todo-database
 - [x] [**Tool**] List tasks in a project
-- [ ] [**Tool**] Mark a task as done
+- [x] [**Tool**] Mark a task as done
 - [x] [**Tool**] Create a task
 - [ ] [**Graph**] Expand graph to a more interesting workflow
 - [ ] [**Graph**] Add human approval step

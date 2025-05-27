@@ -11,6 +11,7 @@ export interface HumanMessageParams {
     llm: LLM;
 }
 export async function invokeHumanMessage({chatId, metadata, message, llm}: HumanMessageParams) {
+    const showSystemMessage = !chatId;
     const config = getInvokeConfig(chatId, metadata);
     const humanMessage = new HumanMessage(message);
     const {messages} = await llm.invoke({messages: [vikunjaSystemMessage, humanMessage]}, config);

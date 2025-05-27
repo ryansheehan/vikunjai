@@ -12,12 +12,14 @@ import { ToolNode } from '@langchain/langgraph/prebuilt';
 import {
     vikunjaGetAllTasks,
     vikunjaCreateTask,
+    vikunjaUpdateTask,
 } from '$lib/server/llm/tools/vikunja';
 
 // Tools 
 const vikunjaTools = [
     vikunjaGetAllTasks,
     vikunjaCreateTask,
+    vikunjaUpdateTask,
 ];
 
 // Model
