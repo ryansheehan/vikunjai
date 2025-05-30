@@ -27,6 +27,7 @@ This is a demo project to demonstrate [LangChain](https://js.langchain.com/docs/
 - [ ] [**App**] Authentication
 - [ ] [**App**] Streaming responses
 - [ ] [**App**] Explore [AG-UI](https://docs.ag-ui.com/introduction) integration
+- [ ] [**Maintenance**] Create docker compose with vikunja setup and initial data
 
 ## Agent Workflow
 

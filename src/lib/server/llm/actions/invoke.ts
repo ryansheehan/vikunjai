@@ -12,9 +12,10 @@ export interface HumanMessageParams {
 }
 export async function invokeHumanMessage({chatId, metadata, message, llm}: HumanMessageParams) {
     const showSystemMessage = !chatId;
+    const inputMessages = showSystemMessage ? [vikunjaSystemMessage] : [];
     const config = getInvokeConfig(chatId, metadata);
     const humanMessage = new HumanMessage(message);
-    const {messages} = await llm.invoke({messages: [vikunjaSystemMessage, humanMessage]}, config);
+    const {messages} = await llm.invoke({messages: [...inputMessages, humanMessage]}, config);
     return {messages, chatId: config.configurable!.thread_id as string} ;
 }
 
