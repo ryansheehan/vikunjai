@@ -6,5 +6,5 @@ services:
     ports:
       - 3456:3456
     volumes:
-      - ./data/files:/app/vikunja/files
-      - ./data/db:/db
+      - ./data/vikunja/files:/app/vikunja/files
+      - ./data/vikunja/db:/db
