@@ -1,0 +1,10 @@
+services:
+  vikunja:
+    image: vikunja/vikunja:0.24.6
+    env_file: .env      
+    user: "${UID}:${GID}"
+    ports:
+      - 3456:3456
+    volumes:
+      - ./data/files:/app/vikunja/files
+      - ./data/db:/db
