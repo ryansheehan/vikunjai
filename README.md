@@ -4,8 +4,8 @@ This is a demo project to demonstrate [LangChain](https://js.langchain.com/docs/
 
 ## Requirements
 
-* Vikunja instance with API access
 * Google Gemini API key
+* docker
 * Node.js v24
 * pnpm
 
@@ -34,3 +34,34 @@ This is a demo project to demonstrate [LangChain](https://js.langchain.com/docs/
 This is the workflow as it stands currently
 
 ![Agent Workflow Diagram](./agent-workflow.png "Agent Workflow")
+
+## Develop
+
+1. Install packages
+
+    ```bash
+    pnpm install
+    ```
+
+2. Run vikuna docker image
+
+    |   |  |
+    |---|-------|
+    | username | `admin` |
+    | email | `admin@admin.com` |
+    | password | `password` |
+
+
+    ```bash
+    pnpm run vikunja:up
+
+    #or
+
+    docker compose up -d
+    ```
+
+3. Run app
+
+    ```bash
+    pnpm run dev
+    ```
