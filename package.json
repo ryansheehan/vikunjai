@@ -12,6 +12,10 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
+		"vikunja:up": "docker compose up -d",
+		"vikunja:down": "docker compose down",
+		"vikunja:logs": "docker compose logs vikunja",
+		"vikunja:logs:watch": "docker compose logs -f vikunja", 
 		"db:push": "drizzle-kit push",
 		"db:migrate": "drizzle-kit migrate",
 		"db:studio": "drizzle-kit studio"

@@ -17,8 +17,8 @@ export const POST: RequestHandler = async ({locals, request}) => {
 
     const metadata = {
         vikunja: {
-            projectId: 2,
-            viewId: 7,
+            projectId: 1,
+            viewId: 3,
         }
     }
 
