@@ -67,7 +67,6 @@
 	"dependencies": {
 		"@langchain/core": "^0.3.58",
 		"@langchain/google-genai": "^0.2.9",
-		"@langchain/google-vertexai": "^0.2.12",
 		"@langchain/langgraph": "^0.2.73",
 		"@langchain/openai": "^0.5.13",
 		"better-sqlite3": "^11.8.0",
